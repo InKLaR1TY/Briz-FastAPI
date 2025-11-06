@@ -1,0 +1,17 @@
+.card {
+  width: 200px; /* ширина карточки */
+  padding: 10px; /* внутренние отступы */
+  margin: 10px; /* внешние отступы между карточками */
+  background-color: #f9f9f9; /* цвет фона */
+  border-radius: 8px; /* скругление углов */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* тень */
+  text-align: center; /* выравнивание содержимого */
+}
+
+.card .photo {
+  width: 100%; /* или 100% если хочешь на всю ширину */
+  height: 100%;
+  object-fit: cover; /* чтобы не сжималось криво */
+  border-radius: 50%; /* сделать круглым */
+  margin-bottom: 10px;
+}

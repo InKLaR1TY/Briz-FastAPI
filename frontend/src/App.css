@@ -1,0 +1,472 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-blue: #155a8a;
+  --light-blue: #2196f3;
+  --sky-blue: #b3d8f7;
+  --white: #fff;
+}
+
+body, html {
+  color: var(--dark-blue);
+  background: var(--sky-blue);
+}
+
+.briz-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: linear-gradient(135deg, #e3f0fc 0%, #b3d8f7 100%);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Здесь будут стили для компонентов Briz */
+
+.main-page {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.main-page h1 {
+  color: #2196f3;
+  margin-bottom: 1rem;
+}
+
+.main-page p {
+  color: #155a8a;
+  margin-bottom: 2rem;
+}
+
+.main-buttons {
+  margin: 2rem 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.about-link {
+  color: #2196f3;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.about-link:hover {
+  color: #1565c0;
+}
+
+/* --- Шапка --- */
+.briz-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background: var(--sky-blue);
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.07);
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+}
+.logo-placeholder {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--light-blue);
+  letter-spacing: 2px;
+  /* margin-left: 1vw; */
+}
+.header-btn {
+  background: var(--light-blue);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  padding: 0.6em 1.4em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+  /* margin-right: 1vw; */
+}
+.header-btn:hover {
+  background: var(--dark-blue);
+}
+
+/* --- Слайдшоу --- */
+.briz-slideshow {
+  width: 100%;
+  height: 340px;
+  background: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.slideshow-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(33, 150, 243, 0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.slideshow-title {
+  color: var(--white);
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.slideshow-btn {
+  background: var(--white);
+  color: var(--light-blue);
+  border: none;
+  border-radius: 6px;
+  padding: 0.8em 2em;
+  font-size: 1.1em;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.12);
+  transition: background 0.2s, color 0.2s;
+}
+.slideshow-btn:hover {
+  background: var(--light-blue);
+  color: var(--white);
+}
+
+/* --- Навигация --- */
+.briz-nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  background: var(--sky-blue);
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.07);
+  box-sizing: border-box;
+}
+.nav-btn {
+  background: none;
+  border: none;
+  color: var(--dark-blue);
+  font-size: 1.1em;
+  font-weight: 500;
+  padding: 1.1rem 1.5rem;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: color 0.2s, background 0.2s;
+  position: relative;
+  z-index: 1;
+}
+.nav-btn.active, .nav-btn:hover, .nav-btn:focus {
+  color: var(--white);
+  background: var(--light-blue);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.10);
+}
+
+/* --- Основной контент --- */
+.briz-main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2.5rem auto 0 auto;
+  padding: 0 1rem 2rem 1rem;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.services-section, .masters-section, .location-section, .contacts-section {
+  margin-bottom: 3rem;
+  /* background: var(--white); */
+  border-radius: 12px;
+  /* box-shadow: 0 2px 12px rgba(33, 150, 243, 0.06); */
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.services-section h2, .masters-section h2, .location-section h2, .contacts-section h2 {
+  color: var(--light-blue);
+  margin-bottom: 1.2rem;
+}
+.services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  font-size: 1.1em;
+  justify-content: center;
+}
+.services-list li {
+  background: #e3f0fc;
+  border-radius: 6px;
+  padding: 0.7em 1.2em;
+  color: #155a8a;
+  font-weight: 500;
+}
+
+/* --- Мастера --- */
+.masters-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* max-width: 800px; */
+  margin: 0 auto;
+}
+
+.masters-list {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  min-height: 340px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  padding: 0 1rem;
+  width: 100%;
+}
+
+/* Скрыть скроллбар в WebKit браузерах */
+.masters-list::-webkit-scrollbar {
+  display: none;
+}
+.master-card {
+  background: var(--sky-blue);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.1);
+  padding: 1.5rem 1.5rem;
+  width: 220px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  position: relative;
+}
+.master-card:hover, .master-card:focus {
+  background: var(--light-blue);
+  color: var(--white);
+}
+.master-card:hover .master-profile,
+.master-card:focus .master-profile,
+.master-card:hover .master-name,
+.master-card:focus .master-name,
+.master-card:hover .master-exp,
+.master-card:focus .master-exp {
+  color: var(--white);
+}
+.master-profile {
+  color: var(--dark-blue);
+  font-weight: 500;
+  font-size: 1em;
+  text-align: center;
+  line-height: 1.3;
+  height: 2.6em; /* 2 строки */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+.master-photo {
+  width: 140px;
+  height: 140px;
+  background: #b3d8f7 url('https://cdn-icons-png.flaticon.com/512/847/847969.png') center/60% no-repeat;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid #2196f3;
+  box-shadow: 0 4px 8px rgba(33, 150, 243, 0.2);
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.master-name {
+  font-weight: 500;
+  font-size: 1em;
+  text-align: center;
+  line-height: 1.3;
+  height: 2.6em; /* 2 строки */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  color: var(--dark-blue);
+  overflow: hidden;
+}
+.master-exp {
+  color: var(--dark-blue);
+  font-size: 0.9em;
+  text-align: center;
+  line-height: 1.3;
+  height: 1.3em; /* 1 строка */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Кнопки карусели */
+.carousel-btn {
+  background: var(--light-blue);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+  background: var(--dark-blue);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev-btn {
+  left: -25px;
+}
+
+.carousel-btn.next-btn {
+  right: -25px;
+}
+
+
+
+/* --- Адрес и карта --- */
+.location-address {
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--dark-blue);
+  text-align: center;
+}
+.location-map-placeholder {
+  width: 100%;
+  height: 220px;
+  background: var(--sky-blue);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark-blue);
+  font-size: 1.1em;
+  font-style: italic;
+  text-align: center;
+}
+
+/* --- Контакты --- */
+.contacts-list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+  background: var(--sky-blue);
+  color: var(--dark-blue);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.08);
+  transition: background 0.2s, color 0.2s;
+}
+.contact-item:hover, .contact-item:focus {
+  background: var(--light-blue);
+  color: var(--white);
+}
+.contact-item:hover .contact-type,
+.contact-item:focus .contact-type,
+.contact-item:hover .contact-value,
+.contact-item:focus .contact-value,
+.contact-item:hover .contact-icon,
+.contact-item:focus .contact-icon {
+  color: var(--white);
+}
+.contact-item:hover .contact-icon,
+.contact-item:focus .contact-icon {
+  background: var(--light-blue);
+}
+.contact-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--sky-blue);
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  color: var(--light-blue);
+}
+.contact-type {
+  color: var(--light-blue);
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+.contact-value {
+  color: var(--dark-blue);
+  font-size: 1em;
+}
+
+/* --- Футер --- */
+.briz-footer {
+  width: 100%;
+  background: var(--sky-blue);
+  color: var(--dark-blue);
+  text-align: center;
+  padding: 1.2rem 0 1.5rem 0;
+  font-size: 1em;
+  margin-top: 2rem;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 -2px 8px rgba(33, 150, 243, 0.07);
+  box-sizing: border-box;
+}
+
+.service-btn {
+  background: var(--sky-blue);
+  border: none;
+  border-radius: 6px;
+  padding: 0.7em 1.2em;
+  color: var(--dark-blue);
+  font-weight: 500;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.06);
+}
+.service-btn:hover, .service-btn:focus {
+  background: var(--light-blue);
+  color: var(--white);
+  outline: none;
+}
